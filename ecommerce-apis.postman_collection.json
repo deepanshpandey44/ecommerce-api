@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "c262c3f7-881a-4dcc-b06d-6c5cfeafcd2a",
+		"name": "ecommerce-apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "6622318"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Deepansh Pandey",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "deepanshpandey441@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Admin@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8001/api/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "deepanshpandey44@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Admin@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8001/api/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "2|FT6clVUGS5QBqxGLJRmSBdoy3GSbBibREsbfi9Yu3fdda7ed"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "{{ecommurl}}/api/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Product List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "5|y8wtndvSY3hMUERDBcsbhK72dOTQNIdWvN7jWNcK5ef38eef"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "{{ecommurl}}/api/products"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "3|m3k6jm22yswwmwpMQm0fEhbQIoNZ2BaRnWBOBg6C85be7690"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tshirts",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Latest collections",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "sku",
+									"value": "tshirt11",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Deepansh/Downloads/haarmmoniia___ssc2020_by_futurixus_de88td6.png"
+								},
+								{
+									"key": "other_images[]",
+									"type": "file",
+									"src": [
+										"/C:/Users/Deepansh/Desktop/images/challenges_solution.png",
+										"/C:/Users/Deepansh/Desktop/images/contact_us.png",
+										"/C:/Users/Deepansh/Downloads/image/subhero.jpg"
+									]
+								}
+							]
+						},
+						"url": "{{ecommurl}}/api/products"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Product",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "3|m3k6jm22yswwmwpMQm0fEhbQIoNZ2BaRnWBOBg6C85be7690"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Jeanss",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "New Trend",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "2000",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "20000",
+									"type": "text"
+								},
+								{
+									"key": "sku",
+									"value": "blue, black",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Deepansh/Downloads/image/aboutus-2.jpg"
+								},
+								{
+									"key": "other_images[]",
+									"type": "file",
+									"src": "/C:/Users/Deepansh/Downloads/image/subhero-professional.jpg"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{ecommurl}}/api/products/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Single Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "3|m3k6jm22yswwmwpMQm0fEhbQIoNZ2BaRnWBOBg6C85be7690"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{ecommurl}}/api/products/2"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "3|m3k6jm22yswwmwpMQm0fEhbQIoNZ2BaRnWBOBg6C85be76905"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "{{ecommurl}}/api/products/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
